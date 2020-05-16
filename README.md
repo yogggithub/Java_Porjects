@@ -13,3 +13,15 @@ This JAVA program will search the full grid, then output the word that match a g
 This is a simple chat window that can be used to communicate with friends in the same LAN.
 
 This application can send message, record message history, and shake chat window.
+
+<HR>
+
+<a href="https://github.com/yogggithub/Java_Projects/tree/StudentManagementSystem">Student Management System</a>
+
+This is a simple brower-based student management system.
+It allows users to look through all the students, add, modify or delete students.
+This project is based on Java, MySQL, and some Java third-party libraires include DBUtils, C3P0, and JSTL.
+
+CHANGE NOTES:
+v1.1: plan to add verification on login and add or modify student.
+v1.0: have implements these functions: user login, show all students, add/update/delete student, and search student by name or gender.
