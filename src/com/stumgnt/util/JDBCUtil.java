@@ -1,10 +1,7 @@
 package com.stumgnt.util;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.sql.DataSource;
 
@@ -41,47 +38,4 @@ public class JDBCUtil {
 	public static DataSource getDataSource() {
 		return dataSource;
 	}
-
-//	public static void releaseSource
-//				(Connection conn, Statement st, ResultSet rs) {
-//		try {
-//			if (rs != null) {
-//				rs.close();
-//			}
-//			if (st != null) {
-//				st.close();
-//			}
-//			if (conn != null) {
-//				conn.close();
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			rs = null;
-//			st = null;
-//			conn = null;
-//		}
-//	}
-//
-//	public static void release
-//				(Connection conn, PreparedStatement ps, ResultSet rs) {
-//		try {
-//			if (rs != null) {
-//				rs.close();
-//			}
-//			if (ps != null) {
-//				ps.close();
-//			}
-//			if (conn != null) {
-//				conn.close();
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			rs = null;
-//			ps = null;
-//			conn = null;
-//		}
-//	}
-
 }

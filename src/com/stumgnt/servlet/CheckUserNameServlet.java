@@ -9,21 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.stumgnt.domain.User;
-import com.stumgnt.service.UserService;
-import com.stumgnt.service.impl.UserServiceImpl;
+import com.stumgnt.dao.UserDao;
+import com.stumgnt.dao.impl.UserDaoImpl;
 
 /**
- * Servlet implementation class StuLogin
+ * Servlet implementation class CheckUserNameservlet
  */
-@WebServlet("/UserLogin")
-public class UserLogin extends HttpServlet {
+@WebServlet("/CheckUserNameServlet")
+public class CheckUserNameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UserLogin() {
+	public CheckUserNameServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,7 +33,17 @@ public class UserLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doPost(request, response);
+		try {
+			String userName = request.getParameter("username");
+			UserDao dao = new UserDaoImpl();
+			if (dao.checkUserName(userName)) {
+				response.getWriter().println(0); // user name does not exist
+			} else {
+				response.getWriter().println(1); // user name is exist
+			}
+		} catch (SQLException e) {
+			// TODO: handle exception
+		}
 	}
 
 	/**
@@ -43,24 +52,8 @@ public class UserLogin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		// encode with utf-8
-		request.setCharacterEncoding("UTF-8");
-
-		String username = (String) request.getParameter("username");
-		String password = (String) request.getParameter("password");
-
-		UserService service = new UserServiceImpl();
-		try {
-			if (service.login(username, password)) {
-				User user = new User(username, password);
-				request.setAttribute("user", user);
-				request.getRequestDispatcher("index.jsp").forward(request, response);
-			} else {
-				response.getWriter().write("Invalid");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
+
 }
