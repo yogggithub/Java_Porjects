@@ -26,6 +26,6 @@ This project is based on Java, MySQL, and some Java third-party libraires includ
 
 CHANGE NOTES:
 
-v1.1: plan to add verification on login and add or modify student.
+v1.1: Add Register with simple validation, deploy auto login feature
 
 v1.0: have implements these functions: user login, show all students, add/update/delete student, and search student by name or gender.
