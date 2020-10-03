@@ -1,3 +1,6 @@
+CREATE DATABASE stumgnt;
+USE stumgnt;
+
 CREATE TABLE t_student (
 	stuid INT PRIMARY KEY  AUTO_INCREMENT,
 	stuname VARCHAR (20) not null ,
